@@ -30,6 +30,7 @@ public sealed partial class WelcomeWindow : WindowEx, IWinoFrameProvider
         this.SetIcon("Assets/Wino_Icon.ico");
 
         ConfigureWindowChrome();
+        Helpers.WindowMouseWheelHandler.Attach(this);
 
         IsResizable = false;
         IsMaximizable = false;

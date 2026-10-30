@@ -244,6 +244,13 @@ public sealed partial class WinoMailRenderer : UserControl, IHtmlMailRenderer, I
             ? RendererWebView2
             : throw new ObjectDisposedException(nameof(WinoMailRenderer));
 
+    public void ScrollBy(double deltaX, double deltaY)
+    {
+        if (_disposed || RendererWebView2?.CoreWebView2 is null) return;
+        _ = RendererWebView2.ExecuteScriptAsync(
+            $"window.scrollBy({{ left: {deltaX.ToString(System.Globalization.CultureInfo.InvariantCulture)}, top: {deltaY.ToString(System.Globalization.CultureInfo.InvariantCulture)}, behavior: 'auto' }});");
+    }
+
     public void SetMemoryUsageTargetLevel(CoreWebView2MemoryUsageTargetLevel level)
     {
         if (_disposed || RendererWebView2?.CoreWebView2 is not { } coreWebView)

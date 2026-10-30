@@ -18,7 +18,7 @@ public static class WinoWebViewEnvironment
             Environment.SetEnvironmentVariable("WEBVIEW2_DEFAULT_BACKGROUND_COLOR", "00FFFFFF");
             Environment.SetEnvironmentVariable(
                 "WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS",
-                "--enable-features=OverlayScrollbar,msOverlayScrollbarWinStyle,msOverlayScrollbarWinStyleAnimation,msWebView2CodeCache");
+                "--enable-features=msWebView2CodeCache");
             _environmentConfigured = true;
         }
     }

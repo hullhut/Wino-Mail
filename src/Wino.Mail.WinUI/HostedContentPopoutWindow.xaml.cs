@@ -43,6 +43,7 @@ public sealed partial class HostedContentPopoutWindow : WindowEx
 
         this.SetIcon("Assets/Wino_Icon.ico");
         this.CenterOnScreen();
+        Helpers.WindowMouseWheelHandler.Attach(this);
 
         Closed += OnClosed;
     }

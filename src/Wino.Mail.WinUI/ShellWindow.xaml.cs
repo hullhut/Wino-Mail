@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -115,6 +115,7 @@ public sealed partial class ShellWindow : WindowEx, IWinoShellWindow,
 
         // Register global mouse button listener for back button
         RegisterMouseBackButtonListener();
+        Helpers.WindowMouseWheelHandler.Attach(this);
 
         this.SetIcon("Assets/Wino_Icon.ico");
 

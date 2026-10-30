@@ -1,6 +1,18 @@
 :root { color-scheme: light; }
-html { box-sizing: border-box; height: 100%; margin: 0; background: #ffffff; }
-body { box-sizing: border-box; min-height: 100%; margin: 0; background: transparent; }
+html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    background: #ffffff;
+    overflow-y: scroll;
+}
+body {
+    box-sizing: border-box;
+    min-height: 100%;
+    margin: 0;
+    background: transparent;
+    padding-bottom: 48px !important;
+}
 :root[data-surface="dark"] { color-scheme: dark; background: Canvas; }
 #wino-reader { display: block; min-height: 100vh; visibility: hidden; outline: none; }
 #wino-reader-heading {
@@ -9,4 +21,22 @@ body { box-sizing: border-box; min-height: 100%; margin: 0; background: transpar
 }
 @media print {
     :root, :root[data-surface="dark"] { color-scheme: light; background: #ffffff; }
+}
+
+/* Ensure vertical scrollbar is permanently visible, distinct, and never hides */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.4);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(128, 128, 128, 0.7);
 }
